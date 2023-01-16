@@ -1,0 +1,136 @@
+/* 375px */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #F5F7FB;
+}
+.app {
+    max-width: 375px;
+    width: 90%;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #293264;
+}
+
+/* Form */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+#select-category {
+    border: none;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #293264;
+}
+#select-difficulty {
+    border: none;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #293264;
+}
+.startQuiz-btn {
+    border: none;
+    font-size: 17px;
+    padding: 10px 0;
+    background-color: #4D5B9E;
+    border-radius: 10px;
+    color: white;
+    width: 50%;
+    margin: 20px auto;
+    transition: 300ms all;
+}
+.startQuiz-btn:hover {
+    opacity: 0.8;
+}
+
+/* Quiz container  */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+}
+.score-container {
+    margin: 40px 0;
+}
+.score-container h3 {
+    font-size: 20px;
+    color: #293264;
+}
+.question {
+    font-size: 20px;
+    text-align: center;
+    color: #293264;
+}
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.answer {
+    border: none;
+    padding: 10px 0;
+    border: 1px solid #293264;
+    font-size: 20px;
+    transition: all 200ms;
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 10px;
+    color: #293264;
+}
+.answer:hover {
+    background-color: #D6DBF5;
+}
+.right-answer-active {
+    background-color: #94D7A2;
+}
+.wrong-answer-active {
+    background-color: #F8BCBC;
+}
+.next-question-button {
+    border: none;
+    font-size: 17px;
+    padding: 10px 0;
+    background-color: #4D5B9E;
+    border-radius: 10px;
+    color: white;
+    width: 50%;
+    margin: 20px auto;
+    transition: 300ms all;
+}
+
+/* Result Page */
+.result-container {
+    text-align: center;
+}
+.result-container h1 {
+    font-size: 20px;
+    color: #293264;
+    text-align: center;
+}
+.playAgian-btn {
+    border: none;
+    font-size: 17px;
+    padding: 10px 0;
+    background-color: #4D5B9E;
+    border-radius: 10px;
+    color: white;
+    width: 50%;
+    margin: 20px;
+    transition: 300ms all;
+}
+.playAgain-btn:hover {
+    opacity: 0.8;
+}

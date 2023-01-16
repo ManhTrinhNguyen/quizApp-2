@@ -1,25 +1,17 @@
 import {useEffect, useState}from 'react'
-import Categories from './Data/Categories'
+import QuizPage from './components/QuizPage'
+import "./styles.css"
 
+import Home from './components/Home'
 
 export default function App() {
 
     const [quizData, setQuizData] = useState([])
     const [categories, setCategories] = useState(null)
     const [difficulty, setDifficulty] = useState(null)
+    const [moveToQuizPage, setMoveToQuizPage] = useState(false)
 
-    const difficultyType = [
-        {
-            diffType: "Easy",
-        },
-        {
-            diffType: "Medium",
-        },
-        {
-            diffType: "Difficult"
-        }
-]
-
+    
     // Fetch Function 
     const fetchFunc = () => {
         fetch(`https://opentdb.com/api.php?amount=5&category=${categories}&difficulty=${difficulty}&type=multiple`)
@@ -36,8 +28,6 @@ export default function App() {
                 }
                 
             })
-
-
             setQuizData(formattedData)
         })
         .catch(err => console.log(err))
@@ -50,39 +40,22 @@ export default function App() {
     }, [categories, difficulty]);
     // End of useEffect
 
-   function handleChangeCategory(event) {
-    const {value} = event.target
-    setCategories(value)
-   }
-   function handleChangeDifficulty(event) {
-    const {value} = event.target
-    console.log(value.toLowerCase())
-    setDifficulty(value.toLowerCase())
-   }
-
-   console.log(quizData)
+   //console.log(quizData)
   return (
-    <div>
-        <form>
-            <h1>Contact Form</h1>
-            <select id="select-category" onChange={handleChangeCategory}>
-                {Categories?.map(category => (
-                       <option 
-                            key={category.category}
-                            value={category.value}
-                       >{category.category}</option>
-                    ))}
-            </select>
-            <select id="select-difficulty" onChange={handleChangeDifficulty}>
-                {difficultyType?.map(diff => (
-                    <option
-                        key={diff.diff}
-                        value={diff.diff}
-                    >{diff.diffType}</option>
-                ))}
-            </select>
-            <button>Start Quiz</button>
-        </form>
+    <div className='app'>
+        <h1 className='title'>Trival Quizz</h1>
+        {moveToQuizPage ?
+         <QuizPage quizData={quizData} setMoveToQuizPage={setMoveToQuizPage}/>
+         : 
+        <Home 
+            quizData={quizData}
+            setMoveToQuizPage={setMoveToQuizPage}
+            categories={categories}
+            setCategories={setCategories}
+            difficulty={difficulty} 
+            setDifficulty={setDifficulty}/>
+        }
+        
     </div>
   )
 }
