@@ -34,6 +34,7 @@ export default function App() {
     }
     // End of Fetch function 
 
+    
     // UseEffect
     useEffect(() => {
         fetchFunc()

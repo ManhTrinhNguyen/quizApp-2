@@ -10,11 +10,20 @@ export default function QuizPage({quizData , setMoveToQuizPage}) {
     const [score, setScore] = useState(0)
     const [result, setResult] = useState(false)
 
+    // Decode String 
+    const decodeString = (str) => {
+        const textArea = document.createElement("textarea")
+        textArea.innerHTML = str
+        return textArea.value
+    }
+    // End of Decode String
+
     // Answer and Question 
     const answer = quizData[indexQuestion].answers.map(answer => {
         return answer
     })
     const question =  quizData[indexQuestion].question
+    decodeString(question)
 
     // Check Answer
     const correctAnswer = quizData[indexQuestion].correct_answer
