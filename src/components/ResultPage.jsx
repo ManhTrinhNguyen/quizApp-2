@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function ResultPage({score, setMoveToQuizPage}) {
+export default function ResultPage({score, setMoveToQuizPage, setDifficulty, setCategories}) {
 
     function playAgain () { 
         setMoveToQuizPage(false)
+        setDifficulty(null)
+        setCategories(null)
     }
   return (
         <div className='result-container'>

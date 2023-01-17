@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import ResultPage from './ResultPage';
 
-export default function QuizPage({quizData , setMoveToQuizPage}) {
+export default function QuizPage({quizData , setMoveToQuizPage, setDifficulty, setCategories}) {
     console.log(quizData)
 
     const [indexQuestion, setIndexQuestion] = useState(0);
@@ -59,7 +59,12 @@ export default function QuizPage({quizData , setMoveToQuizPage}) {
   return (
     <>
         {result ? 
-        <ResultPage score={score} setMoveToQuizPage={setMoveToQuizPage}/> : 
+        <ResultPage 
+        score={score} 
+        setMoveToQuizPage={setMoveToQuizPage}
+        setCategories={setCategories}
+        setDifficulty={setDifficulty}
+        /> : 
 
         <div className='quiz-container'>
             <div className='score-container'>

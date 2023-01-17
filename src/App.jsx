@@ -46,7 +46,12 @@ export default function App() {
     <div className='app'>
         <h1 className='title'>Trival Quizz</h1>
         {moveToQuizPage ?
-         <QuizPage quizData={quizData} setMoveToQuizPage={setMoveToQuizPage}/>
+         <QuizPage 
+         quizData={quizData}
+         setMoveToQuizPage={setMoveToQuizPage}
+         setCategories={setCategories}
+         setDifficulty={setDifficulty}
+         />
          : 
         <Home 
             quizData={quizData}
